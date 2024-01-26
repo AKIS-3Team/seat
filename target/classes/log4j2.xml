@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<Configuration>
+	
+	<!-- Appender, Layout 설정 -->
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d{ABSOLUTE}] [%5p] %C (%M:%L) - %m%n" />
+		</Console>
+		<RollingFile name="rollingFile" fileName="/logs/newbie.log" filePattern="/logs/newbie.%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] %C (%M:%L) - %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	
+	<!-- Logger 설정 -->
+	<Loggers>
+		<Logger name="kr.co.newbie" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="kr.co.akis" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="egovframework" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="java.sql" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="log4jdbc.log4j2" level="ERROR" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.sqlonly" level="WARN" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.sqltiming" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.audit" level="WARN" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.resultset" level="WARN" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.resultsettable" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Logger name="jdbc.connection" level="WARN" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" level="ERROR" />
+		</Root>
+	</Loggers>
+	
+</Configuration>

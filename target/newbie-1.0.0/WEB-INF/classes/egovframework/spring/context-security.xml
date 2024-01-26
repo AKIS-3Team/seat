@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sec="http://www.springframework.org/schema/security" xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+				http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+				http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- Security Http -->
+	<sec:http pattern="/**/*.css" security="none" />
+	<sec:http pattern="/**/*.js" security="none" />
+	<sec:http pattern="/css/**" security="none" />
+	<sec:http pattern="/js/**" security="none" />
+	<sec:http pattern="/img/**" security="none" />
+	<sec:http pattern="/error/**" security="none" />
+	<sec:http auto-config="true" use-expressions="true">
+		<sec:csrf disabled="true" />
+		<sec:headers>
+			<sec:frame-options policy="SAMEORIGIN" />
+		</sec:headers>
+		
+		<sec:intercept-url pattern="/**" access="permitAll" requires-channel="http" />
+	</sec:http>
+	
+	<!-- Security Provider -->
+	<sec:authentication-manager >
+	</sec:authentication-manager>
+	
+	
+</beans>

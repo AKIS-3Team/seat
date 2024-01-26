@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- Main DataSource -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${database.main.driverClassName}" />
+		<property name="url" value="${database.main.url}" />
+		<property name="username" value="${database.main.userName}" />
+		<property name="password" value="${database.main.password}" />
+		<property name="defaultAutoCommit" value="true" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxActive" value="150" />
+		<property name="maxIdle" value="30" />
+		<property name="minIdle" value="10" />
+		<property name="initialSize" value="10" />
+		<property name="maxWait" value="10000" />
+	</bean>
+	
+</beans>
