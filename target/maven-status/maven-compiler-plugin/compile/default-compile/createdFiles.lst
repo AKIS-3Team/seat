@@ -17,12 +17,14 @@ kr\co\akis\common\exception\NullDataException.class
 kr\co\newbie\sample\bbs\service\impl\SampleBbsMapper.class
 kr\co\newbie\sample\bbs\service\SampleBbsService.class
 kr\co\akis\util\ExceptionUtil.class
+kr\co\newbie\sample\member\service\impl\Member.class
 kr\co\akis\util\StringUtil.class
 kr\co\akis\egovframework\LoginUtil.class
 kr\co\akis\util\DateUtil.class
 kr\co\akis\common\exception\NotLoginException.class
 kr\co\akis\util\EncodeUtil.class
 kr\co\akis\egovframework\EgovUserDetailsMapping.class
+kr\co\newbie\sample\member\JpaMain.class
 kr\co\akis\util\ObjectUtil.class
 kr\co\akis\egovframework\EgovUserDetailsVO.class
 kr\co\akis\util\SystemUtil$1.class
